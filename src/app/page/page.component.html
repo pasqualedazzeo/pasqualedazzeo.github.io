@@ -1,0 +1,58 @@
+<head>
+  <link 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+
+</head>
+  
+
+<nav class="navbar navbar-expand-lg bg-success navbar-dark">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" routerLink="/home">Welcome!</a>
+
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"  aria-label="Toggle navigation"
+      aria-controls="navbarSupportedContent" aria-expanded="false" data-mdb-target="#navbarSupportedContent">
+          <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Link -->
+              <li class="nav-item">
+                  <a class="nav-link text-white" routerLink="projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" routerLink="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="contact">Contacts</a>
+          </li>
+          </ul>
+
+          <!-- Icons -->
+          <ul class="navbar-nav d-flex flex-row me-1">
+              <li class="nav-item me-3 me-lg-0">
+                  <a class="nav-link text-white" href="https://github.com/pasqualedazzeo"><i class="fa fa-github"></i></a>
+              </li>
+              <li class="nav-item me-3 me-lg-0">
+                  <a class="nav-link text-white" href="https://www.facebook.com/pasquale.dazzeo.98"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link text-white" href="https://www.linkedin.com/in/pasquale-dazzeo"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+      </div>
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div class="background-image">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
