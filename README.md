@@ -58,7 +58,7 @@ I'm always open to new opportunities and collaborations. Feel free to reach out 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
