@@ -3,88 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pasquale Dazzeo - AI Engineer Portfolio">
     <title>Pasquale Dazzeo - AI Engineer</title>
-    <link rel="stylesheet" href="portfolio.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="portfolio.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home"><img src="images/wheelbarrow.png" width="30" height="30"> Work in progress!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="vh-100 d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-1 mb-3" data-aos="fade-up">Pasquale Dazzeo</h1>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">AI Engineer | Machine Learning Enthusiast</p>
+            <a href="#about" class="btn btn-outline-light btn-lg" data-aos="fade-up" data-aos-delay="200">Discover More</a>
+        </div>
     </header>
 
-    <main>
-        <section id="home">
-            <h1>Pasquale Dazzeo</h1>
-            <h2>AI Engineer</h2>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm Pasquale Dazzeo, a 26-year-old AI Engineer passionate about pushing the boundaries of artificial intelligence and machine learning. With a keen interest in developing innovative AI solutions, I strive to create impactful technologies that solve real-world problems.</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>AI-Powered Image Recognition</h3>
-                    <p>Developed a deep learning model for real-time object detection and classification in images and video streams.</p>
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="/images/me.webp" alt="Pasquale Dazzeo" class="img-fluid rounded-circle mb-4">
                 </div>
-                <div class="project-card">
-                    <h3>Natural Language Processing Chatbot</h3>
-                    <p>Created an advanced NLP-based chatbot for customer service automation, improving response times and user satisfaction.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Predictive Maintenance System</h3>
-                    <p>Implemented a machine learning model to predict equipment failures in industrial settings, reducing downtime and maintenance costs.</p>
+                <div class="col-md-6" data-aos="fade-left">
+                    <p class="lead">Hello! I'm Pasquale Dazzeo, a 26-year-old AI Engineer passionate about pushing the boundaries of artificial intelligence and machine learning. With a keen interest in developing innovative AI solutions, I strive to create impactful technologies that solve real-world problems.</p>
+                    <p>My journey in AI has led me to work on exciting projects ranging from natural language processing to computer vision. I'm always eager to learn and apply cutting-edge technologies to create intelligent systems that can make a difference.</p>
+                    <a href="#contact" class="btn btn-primary mt-3">Let's Connect</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Machine Learning</li>
-                <li>Deep Learning</li>
-                <li>Natural Language Processing</li>
-                <li>Computer Vision</li>
-                <li>Python</li>
-                <li>TensorFlow</li>
-                <li>PyTorch</li>
-                <li>Scikit-learn</li>
-                <li>Data Analysis</li>
-                <li>Big Data Technologies</li>
-            </ul>
-        </section>
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="flip-left">
+                    <div class="card h-100">
+                        <img src="/images/wheelbarrow.png" class="card-img-top" alt="AI-Powered Document Generation">
+                        <div class="card-body">
+                            <h5 class="card-title">AI-Powered Document Generation</h5>
+                            <p class="card-text">Work in progress...</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Skills</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h4 class="mb-3">Technical Skills</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 95%;">Python</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 20%;">Work in progress...</div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <h4 class="mb-3">Tools & Frameworks</h4>
+                    <div class="d-flex flex-wrap">
+                        <span class="badge bg-primary m-1 p-2">Keras</span>
+                        <span class="badge bg-primary m-1 p-2">Docker</span>
+                        <span class="badge bg-primary m-1 p-2">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Pasquale Dazzeo. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/pasquale-dazzeo" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.github.com/pasqualedazzeo" target="_blank"><i class="fab fa-github"></i></a>
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="contact-form" data-aos="fade-up">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2024 Pasquale Dazzeo. All rights reserved.</p>
+            <div class="social-links mt-3">
+                <a href="https://www.linkedin.com/in/pasquale-dazzeo/" class="text-white me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.github.com/pasqualedazzeo/" class="text-white me-3"><i class="fab fa-github fa-2x"></i></a>
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="portfolio.js"></script>
 </body>
 </html>

@@ -1,4 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+    // Navbar color change on scroll
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            document.querySelector('.navbar').classList.add('scrolled');
+        } else {
+            document.querySelector('.navbar').classList.remove('scrolled');
+        }
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -9,60 +24,86 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form validation and submission
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (e) => {
+    // Form submission handling
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
-        if (validateForm()) {
-            // Here you would typically send the form data to a server
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+        // Here you would typically send the form data to a server
+        alert('Thank you for your message! I will get back to you soon.');
+        form.reset();
+    });
+
+    // Animate skill bars on scroll
+    const skillSection = document.getElementById('skills');
+    const progressBars = document.querySelectorAll('.progress-bar');
+    let animated = false;
+
+    window.addEventListener('scroll', function() {
+        if (isInViewport(skillSection) && !animated) {
+            progressBars.forEach(bar => {
+                const width = bar.getAttribute('style').match(/\d+/)[0];
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 100);
+            });
+            animated = true;
         }
     });
 
-    function validateForm() {
-        const name = document.querySelector('input[name="name"]').value;
-        const email = document.querySelector('input[name="email"]').value;
-        const message = document.querySelector('textarea[name="message"]').value;
-
-        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-            alert('Please fill in all fields.');
-            return false;
-        }
-
-        if (!isValidEmail(email)) {
-            alert('Please enter a valid email address.');
-            return false;
-        }
-
-        return true;
+    // Helper function to check if an element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
 
-    function isValidEmail(email) {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
+    // Typing effect for the header
+    const phrases = ["AI Engineer", "Machine Learning Enthusiast", "Problem Solver"];
+    let i = 0;
+    let j = 0;
+    let currentPhrase = [];
+    let isDeleting = false;
+    let isEnd = false;
+
+    function loop() {
+        isEnd = false;
+        document.querySelector(".lead").innerHTML = currentPhrase.join('');
+
+        if (i < phrases.length) {
+            if (!isDeleting && j <= phrases[i].length + 1) {
+                currentPhrase.push(phrases[i][j]);
+                j++;
+            }
+
+            if (isDeleting && j <= phrases[i].length + 1) {
+                currentPhrase.pop(phrases[i][j]);
+                j--;
+            }
+
+            if (j == phrases[i].length + 1) {
+                isEnd = true;
+                isDeleting = true;
+            }
+
+            if (isDeleting && j === 0) {
+                currentPhrase = [];
+                isDeleting = false;
+                i++;
+                if (i == phrases.length) {
+                    i = 0;
+                }
+            }
+        }
+        const spedUp = Math.random() * (80 -50) + 50;
+        const normalSpeed = Math.random() * (300 - 200) + 200;
+        const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed;
+        setTimeout(loop, time);
     }
 
-    // Add a scroll-to-top button
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = '&uarr;';
-    scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
-    scrollToTopBtn.id = 'scroll-to-top';
-    document.body.appendChild(scrollToTopBtn);
-
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // Show/hide scroll-to-top button based on scroll position
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.style.display = 'block';
-        } else {
-            scrollToTopBtn.style.display = 'none';
-        }
-    });
+    loop();
 });
